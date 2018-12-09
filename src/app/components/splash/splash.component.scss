@@ -1,2 +1,41 @@
 .lgcab-splash {
+  min-height: 600px;
+  background-size: cover;
+  position: relative;
+
+  &__nav {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__slogan {
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+
+    h1 {
+      font-size: 72px;
+      color: white;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: white;
+      font-weight: 400;
+    }
+  }
+
+  &__overlay {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
 }

@@ -34,7 +34,7 @@ export class PhilosophyComponent implements OnInit {
 
         Det ligger i sakens natur att hela vår konkurrenskraft ligger just i detta kontaktnät. Vi har gjort erfarenheterna – du drar fördel av dem.
         `,
-        imageSrc: 'assets/hand.jpg'
+        imageSrc: 'assets/handshake.jpg'
       },
       {
         title: 'RIKTNING',
@@ -42,7 +42,7 @@ export class PhilosophyComponent implements OnInit {
         För golfaren är flaggan på green sinnebilden för det: Oavsett var din golfboll hamnar behöver du bara lyfta blicken för att veta hur nästa slag måste planeras.
         
         I komplexa projekt är det mer än vind och sneda slag som kan komplicera verkligheten ytterligare. Men har man planerat för en komplicerad verklighet och tydligt satt ut sitt mål är det bara att lyfta blicken för att se vart nästa moment ska riktas.`,
-        imageSrc: 'assets/hand.jpg'
+        imageSrc: 'assets/golf.jpg'
       }
     ];
   }

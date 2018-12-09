@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lgcab-splash',
   templateUrl: './splash.component.html',
-  styleUrls: ['./splash.component.scss']
+  styleUrls: ['./splash.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SplashComponent implements OnInit {
+  public imageUrl = '';
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    this.imageUrl = '/assets/splash.jpg';
   }
 
+  ngOnInit() {}
 }
