@@ -1,0 +1,11 @@
+.lgcab-collage {
+  display: flex;
+  &__block {
+    padding: 10px;
+  }
+
+  &__img {
+    max-width: 230px;
+    max-height: 144px;
+  }
+}
