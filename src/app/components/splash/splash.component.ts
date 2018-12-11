@@ -12,6 +12,8 @@ export class SplashComponent implements OnInit {
   constructor() {
     this.imageUrl = '/assets/splash.jpg';
   }
-
-  ngOnInit() {}
+  public innerHeight: any;
+  ngOnInit() {
+    this.innerHeight = window.innerHeight;
+  }
 }
