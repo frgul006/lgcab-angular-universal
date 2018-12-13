@@ -13,8 +13,9 @@ export class StartComponent implements OnInit {
 
   ngOnInit() {
     this.seo.generateTags({
-      title: 'Start',
-      description: '',
+      title: 'LGCAB - Lennart Gullberg Consulting AB',
+      description:
+        'Vi är projektledare. Det säger allt och ingenting. Ibland lägger vi till att vi hjälper företag i förändring. Vi upprättar dessutom kontrollplaner enl PBL. ',
       slug: ''
     });
 

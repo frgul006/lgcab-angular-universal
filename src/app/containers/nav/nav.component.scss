@@ -29,6 +29,12 @@
   &__mobile {
     margin-top: 3px;
 
+    button {
+      -webkit-appearance: none;
+      border: 0;
+      background: inherit;
+    }
+
     .mat-icon {
       color: #fff;
     }
