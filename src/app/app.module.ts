@@ -8,7 +8,6 @@ import { ContainersModule } from './containers/containers.module';
 import { PagesModule } from './pages/pages.module';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { StartComponent } from './pages/start/start.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,10 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PagesModule,
     RouterModule.forRoot([
       { path: '', component: StartComponent, pathMatch: 'full' },
-      { path: 'projects', component: ProjectsComponent }
+      { path: 'uppdrag', component: ProjectsComponent }
     ]),
-    TransferHttpCacheModule,
-    BrowserAnimationsModule
+    TransferHttpCacheModule
   ],
   providers: [],
   bootstrap: [AppComponent]

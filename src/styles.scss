@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'material.scss';
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.lgcab-grey {
+  display: block;
+  background-color: #f5f5f5;
+}
+
+.lgcab-anchor {
+  position: relative;
+  top: -120px;
+}
+
+.lgcab-page {
+  &:before {
+    content: '';
+    display: block;
+    min-height: 96px;
+    background-color: #333;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  }
+}

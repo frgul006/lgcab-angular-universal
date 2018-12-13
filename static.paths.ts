@@ -1,1 +1,1 @@
-export const ROUTES = ['/', '/projects'];
+export const ROUTES = ['/', '/uppdrag'];

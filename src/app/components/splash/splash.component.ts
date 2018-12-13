@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'lgcab-splash',
@@ -6,14 +6,12 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./splash.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SplashComponent implements OnInit {
+export class SplashComponent {
+  @Input() height: number;
+
   public imageUrl = '';
 
   constructor() {
-    this.imageUrl = '/assets/splash.jpg';
-  }
-  public innerHeight: any;
-  ngOnInit() {
-    this.innerHeight = window.innerHeight;
+    this.imageUrl = '/assets/splash-min.jpg';
   }
 }

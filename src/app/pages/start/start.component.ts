@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { SeoService } from '../../seo.service';
 
 @Component({
@@ -7,7 +8,8 @@ import { SeoService } from '../../seo.service';
   styleUrls: ['./start.component.scss']
 })
 export class StartComponent implements OnInit {
-  constructor(private seo: SeoService) {}
+  public innerHeight: number;
+  constructor(private seo: SeoService, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
     this.seo.generateTags({
@@ -15,5 +17,11 @@ export class StartComponent implements OnInit {
       description: '',
       slug: ''
     });
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.innerHeight = window.innerHeight;
+    } else {
+      this.innerHeight = 0;
+    }
   }
 }

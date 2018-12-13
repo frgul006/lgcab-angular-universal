@@ -1,0 +1,58 @@
+:host {
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  position: absolute;
+  transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.lgcab-nav--past-splash {
+    position: fixed;
+    background-color: #333;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.lgcab-nav {
+  display: flex;
+  padding: 30px 39px;
+  width: 100%;
+  justify-content: space-between;
+
+  @media only screen and (min-width: 768px) {
+    width: inherit;
+    align-items: center;
+  }
+
+  &__mobile {
+    margin-top: 3px;
+
+    .mat-icon {
+      color: #fff;
+    }
+  }
+
+  &__item {
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    &--hero {
+      @media only screen and (min-width: 768px) {
+        margin-left: 3rem;
+        margin-right: 3rem;
+      }
+
+      a {
+        font-size: 1.5rem;
+      }
+    }
+
+    a {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+  }
+}
