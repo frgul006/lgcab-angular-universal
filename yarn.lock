@@ -102,12 +102,31 @@
     rxjs "6.3.3"
     source-map "0.7.3"
 
+"@angular-devkit/core@7.1.3":
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.1.3.tgz#3d82a7e99aeb6259ff941d82b65759cb1c397042"
+  integrity sha512-pGBInxmuR5DAhZ1RSfIlkv7cdgh3EDNXXea9ZObEuI9MuFsIWUKODT5oKbRrsOWM6IqwNmx68VEW+xQm2DXyJw==
+  dependencies:
+    ajv "6.5.3"
+    chokidar "2.0.4"
+    fast-json-stable-stringify "2.0.0"
+    rxjs "6.3.3"
+    source-map "0.7.3"
+
 "@angular-devkit/schematics@7.1.2":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-7.1.2.tgz#847639044417d044bf1bc87f64508a0c3f99fae2"
   integrity sha512-NFhHLYWf9gpGQm0s19lq+nAw3CZ0udBpoBLzCm8Crlmu6+7aAXgw7Fv5P4ukWJ/e1m7NDGVids+B6kBGXaY6Ig==
   dependencies:
     "@angular-devkit/core" "7.1.2"
+    rxjs "6.3.3"
+
+"@angular-devkit/schematics@7.1.3":
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-7.1.3.tgz#30d03fde5bb27d6606d9a6e055188382408670d6"
+  integrity sha512-Snmfog/n5k1PWdDaI+Top1F978vlXZFTvxHRPzlMCGhGsY+LMOpeRLVHADI+WP1q1LZ+2BjLELZVA2GP35AH8A==
+  dependencies:
+    "@angular-devkit/core" "7.1.3"
     rxjs "6.3.3"
 
 "@angular/animations@^7.1.2":
@@ -228,10 +247,28 @@
     tslib "^1.9.0"
     xhr2 "^0.1.4"
 
+"@angular/pwa@^0.11.3":
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/@angular/pwa/-/pwa-0.11.3.tgz#12f1e411995bea2a4d6d7865ccf0a7264f942793"
+  integrity sha512-sra69OrL0GXerC9sfkUZ94BvYoSYm96iqkAvf5lIvANWyLrX6dSFe57JfqBL7nVUZKKqkIaIqIXEuGwliA4Ipg==
+  dependencies:
+    "@angular-devkit/core" "7.1.3"
+    "@angular-devkit/schematics" "7.1.3"
+    "@schematics/angular" "7.1.3"
+    parse5-html-rewriting-stream "5.1.0"
+    rxjs "6.3.3"
+
 "@angular/router@7.1.2":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-7.1.2.tgz#3a322f6ee912d309e5f65eb10c7db6cf376d82c8"
   integrity sha512-Lht4hcbx2hAtUEcJ1YG4Q63bukKrDHxqSnELMYi1/G5y5vH8LWPQX7aoEcOJeaQWQTKroQBAIeprol/h9vkvoQ==
+  dependencies:
+    tslib "^1.9.0"
+
+"@angular/service-worker@7.1.2":
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/service-worker/-/service-worker-7.1.2.tgz#22ac81163c338844e371df89d3b5c84d60bffc1c"
+  integrity sha512-+VIfHDcXMYosPBAoIq3a5vdtt1OQylsxYdhEIhQusOFUQ/0K9qmjwdK1frJ30nCVprmZ4WlLVs8zoeSvpUWJPA==
   dependencies:
     tslib "^1.9.0"
 
@@ -262,6 +299,15 @@
   dependencies:
     "@angular-devkit/core" "7.1.2"
     "@angular-devkit/schematics" "7.1.2"
+    typescript "3.1.6"
+
+"@schematics/angular@7.1.3":
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-7.1.3.tgz#2cdbc6471358cf429fbea7ab192edc7246c87bd5"
+  integrity sha512-6Wq6vNjGTc0zmudPogTjiegtTUc0pORTCxI39iinUM+5iemMrCLYKJmYLi5mPFU4OG/Q2fnT06A3dYUorhtLkA==
+  dependencies:
+    "@angular-devkit/core" "7.1.3"
+    "@angular-devkit/schematics" "7.1.3"
     typescript "3.1.6"
 
 "@schematics/update@0.11.2":
@@ -4207,11 +4253,26 @@ parse-json@^4.0.0:
     error-ex "^1.3.1"
     json-parse-better-errors "^1.0.1"
 
+parse5-html-rewriting-stream@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/parse5-html-rewriting-stream/-/parse5-html-rewriting-stream-5.1.0.tgz#63f92c958764aea8cbe3aa68f2e5895c32068ab8"
+  integrity sha512-hZlaOTHJs4dpC5yFHnOSEMh26ErsqTsLzxKqkuRcUqtiu0kMsBQ9pkgANkECDyoBUhJ3+hvb2DPLsyqbtcS61Q==
+  dependencies:
+    parse5 "^5.1.0"
+    parse5-sax-parser "^5.1.0"
+
+parse5-sax-parser@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/parse5-sax-parser/-/parse5-sax-parser-5.1.0.tgz#ec234d23223a8054a74ff173aa3dc2da74c5bbd9"
+  integrity sha512-VEhdEDhBkoSILPmsZ96SoIIUow3hZbtgQsqXw7r8DxxnqsCIO0fwkT9mWgBcf9SPjVUh92liuEprHrrYzXBPWQ==
+  dependencies:
+    parse5 "^5.1.0"
+
 parse5@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
 
-parse5@^5.0.0:
+parse5@^5.0.0, parse5@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.0.tgz#c59341c9723f414c452975564c7c00a68d58acd2"
   integrity sha512-fxNG2sQjHvlVAYmzBZS9YlDp6PTSSDwa98vkD4QgVDDCAo84z5X1t5XyJQ62ImdLXx5NdIIfihey6xpum9/gRQ==
