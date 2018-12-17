@@ -1,0 +1,63 @@
+.lgcab-contact {
+  &__item {
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    @media only screen and (min-width: 576px) {
+      flex-grow: 0;
+    }
+  }
+
+  a.lgcab-contact__item {
+    &:hover,
+    &:focus {
+      outline: 0;
+      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+      text-decoration: none;
+
+      .lgcab-contact__icon {
+        background-color: #333;
+        mat-icon {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+
+    mat-icon {
+      height: inherit;
+      width: inherit;
+      font-size: 40px;
+      color: #333;
+    }
+  }
+
+  &__content {
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 0 4px 4px 0;
+    color: #333;
+  }
+
+  &__header {
+    font-size: 5vw;
+
+    @media only screen and (min-width: 576px) {
+      font-size: 4vw;
+    }
+    @media only screen and (min-width: 768px) {
+      font-size: inherit;
+    }
+  }
+
+  &__text {
+    margin: 0;
+  }
+}
