@@ -7,7 +7,7 @@
           <li *ngFor="let project of (projects | async)" class="lgcab-project">
             <h2 class="lgcab-project__title">{{ project.title }}</h2>
             <p class="lgcab-project__role">{{ project.role }}</p>
-            <p class="lgcab-project__description">{{ project.description }}</p>
+            <div class="lgcab-project__description"><markdown [data]="project.description"></markdown></div>
           </li>
         </ul>
       </div>
