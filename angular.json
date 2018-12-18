@@ -155,6 +155,7 @@
       }
     }
   },
+  "defaultProject": "lgcab",
   "cli": {},
   "schematics": {
     "@schematics/angular:class": {

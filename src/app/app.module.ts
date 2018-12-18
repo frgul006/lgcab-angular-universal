@@ -10,11 +10,15 @@ import { ContainersModule } from './containers/containers.module';
 import { PagesModule } from './pages/pages.module';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { StartComponent } from './pages/start/start.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'lgcab' }),
+    GraphQLModule, 
+    HttpClientModule,
     ComponentsModule,
     ContainersModule,
     PagesModule,

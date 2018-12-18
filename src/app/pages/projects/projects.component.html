@@ -1,1 +1,16 @@
-<div class="lgcab-projects lgcab-page">Hello</div>
+<div class="lgcab-projects lgcab-page">
+  <div class="container">
+    <div class="row mt-5 mb-5">
+      <div class="col">
+        <h1>Uppdrag</h1>
+        <ul class="lgcab-projects__list">
+          <li *ngFor="let project of (projects | async)" class="lgcab-project">
+            <h2 class="lgcab-project__title">{{ project.title }}</h2>
+            <p class="lgcab-project__role">{{ project.role }}</p>
+            <p class="lgcab-project__description">{{ project.description }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
