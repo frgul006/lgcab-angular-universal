@@ -1,28 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Apollo, QueryRef } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { Query } from '../../model/graphql.model';
+import { Project } from '../../model/project.model';
 import { SeoService } from '../../seo.service';
-
-enum ProjectStatus {
-  DOING = 'Doing',
-  DONE = 'Done'
-}
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  role: string;
-  createdAt: Date;
-  currentStatus: ProjectStatus;
-}
-
-interface Query {
-  projects: Project[];
-}
+import { ProjectsDialogComponent } from './projects.dialog.component';
 
 @Component({
   selector: 'lgcab-projects',
@@ -33,7 +18,7 @@ export class ProjectsComponent implements OnInit {
   projectsRef: QueryRef<Query>;
   projects: Observable<Project[]>;
 
-  constructor(private seo: SeoService, private readonly apollo: Apollo) {}
+  constructor(private seo: SeoService, private readonly apollo: Apollo, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.seo.generateTags({
@@ -46,6 +31,7 @@ export class ProjectsComponent implements OnInit {
         query allProjects {
           projects(orderBy: title_ASC) {
             id
+            slug
             title
             description
             role
@@ -57,5 +43,12 @@ export class ProjectsComponent implements OnInit {
     });
 
     this.projects = this.projectsRef.valueChanges.pipe(map(result => result.data.projects));
+  }
+
+  openDialog(project: Project): void {
+    const dialogRef = this.dialog.open(ProjectsDialogComponent, {
+      width: '378px',
+      data: project
+    });
   }
 }
