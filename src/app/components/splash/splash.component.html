@@ -1,8 +1,13 @@
-<div class="lgcab-splash" [ngStyle]="{ 'min-height': height + 'px', 'background-image': 'url(' + imageUrl + ')' }">
+<div
+  class="lgcab-splash"
+  [ngStyle]="{ 'min-height': height + 'px', 'background-image': 'url(' + splash?.backgroundImage.url + ')' }"
+>
   <div class="lgcab-splash__overlay"></div>
   <div class="lgcab-splash__slogan">
-    <h1>VI ÄR PROJEKTLEDARE. DET SÄGER ALLT OCH INGENTING.</h1>
-    <h2>LGCAB × LENNART GULLBERG CONSULTING AB</h2>
+    <h1>{{ splash?.title }}</h1>
+    <h2>{{ splash?.subtitle }}</h2>
   </div>
-  <div class="lgcab-splash__cta"><a href="#contact-section" class="lgcab-splash__btn">Kontakta oss</a></div>
+  <div class="lgcab-splash__cta">
+    <a href="#contact-section" class="lgcab-splash__btn">{{ splash?.callToAction }}</a>
+  </div>
 </div>
