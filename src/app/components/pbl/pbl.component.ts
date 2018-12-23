@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PageComponent } from '../../model/page-component.model';
 
 @Component({
   selector: 'lgcab-pbl',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pbl.component.scss']
 })
 export class PblComponent implements OnInit {
+  @Input() pageComponent: PageComponent;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

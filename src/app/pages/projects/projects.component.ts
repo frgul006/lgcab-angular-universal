@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Apollo, QueryRef } from 'apollo-angular';
-import gql from 'graphql-tag';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Query } from '../../model/graphql.model';
 import { Project } from '../../model/project.model';
+import { QueryService } from '../../queries/query.service';
 import { SeoService } from '../../seo.service';
 import { ProjectsDialogComponent } from './projects.dialog.component';
 
@@ -15,10 +12,9 @@ import { ProjectsDialogComponent } from './projects.dialog.component';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  projectsRef: QueryRef<Query>;
   projects: Observable<Project[]>;
 
-  constructor(private seo: SeoService, private readonly apollo: Apollo, public dialog: MatDialog) {}
+  constructor(private seo: SeoService, private readonly queryService: QueryService, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.seo.generateTags({
@@ -26,23 +22,8 @@ export class ProjectsComponent implements OnInit {
       description: 'Här ser du alla tidigare och pågående projekt utförda av LGCAB',
       slug: 'project'
     });
-    this.projectsRef = this.apollo.watchQuery<Query>({
-      query: gql`
-        query allProjects {
-          projects(orderBy: title_ASC) {
-            id
-            slug
-            title
-            description
-            role
-            createdAt
-            currentStatus
-          }
-        }
-      `
-    });
 
-    this.projects = this.projectsRef.valueChanges.pipe(map(result => result.data.projects));
+    this.projects = this.queryService.getAllProjects();
   }
 
   openDialog(project: Project): void {

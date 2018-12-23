@@ -7,10 +7,28 @@ import { FooterComponent } from './footer/footer.component';
 import { PblComponent } from './pbl/pbl.component';
 import { SplashComponent } from './splash/splash.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { PhilosophyComponent } from './philosophy/philosophy.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
-  declarations: [SplashComponent, ContactComponent, WelcomeComponent, CollageComponent, PblComponent, FooterComponent],
-  imports: [CommonModule, MatIconModule],
-  exports: [SplashComponent, ContactComponent, WelcomeComponent, CollageComponent, PblComponent, FooterComponent]
+  declarations: [
+    SplashComponent,
+    ContactComponent,
+    PhilosophyComponent,
+    WelcomeComponent,
+    CollageComponent,
+    PblComponent,
+    FooterComponent
+  ],
+  imports: [CommonModule, MatIconModule, MarkdownModule.forChild()],
+  exports: [
+    SplashComponent,
+    ContactComponent,
+    PhilosophyComponent,
+    WelcomeComponent,
+    CollageComponent,
+    PblComponent,
+    FooterComponent
+  ]
 })
 export class ComponentsModule {}
