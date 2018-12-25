@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Philosophy } from '../../model/philosophy.model';
 
 @Component({
@@ -7,10 +7,6 @@ import { Philosophy } from '../../model/philosophy.model';
   styleUrls: ['./philosophy.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PhilosophyComponent implements OnInit {
+export class PhilosophyComponent {
   @Input() philosophies: Philosophy[];
-
-  constructor() {}
-
-  ngOnInit() {}
 }

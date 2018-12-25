@@ -1,2 +1,2 @@
-export * from './splash.model';
+export * from './splash-query.response';
 export * from './splash.query';

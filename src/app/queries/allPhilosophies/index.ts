@@ -1,2 +1,2 @@
-export * from './all-philosophies.model';
+export * from './all-philosophies-query.response';
 export * from './all-philosophies.query';

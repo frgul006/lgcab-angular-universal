@@ -1,45 +1,38 @@
 <div class="lgcab-anchor" id="contact-section"></div>
-<div class="lgcab-contact">
-  <a class="lgcab-contact__item" href="tel:0703-34 92 23">
+<div class="lgcab-contact" *ngIf="contact">
+  <a class="lgcab-contact__item" [href]="'tel:' + contact.phoneNo">
     <div class="lgcab-contact__icon"><mat-icon>phone</mat-icon></div>
     <div class="lgcab-contact__content">
       <h3 class="lgcab-contact__header">TELEFON</h3>
-      <p class="lgcab-contact__text">0703-34 92 23</p>
+      <p class="lgcab-contact__text">{{ contact.phoneNo }}</p>
     </div>
   </a>
-  <a class="lgcab-contact__item" href="mailto:lennart@lgcab.se">
+  <a class="lgcab-contact__item" [href]="'mailto:' + contact.email">
     <div class="lgcab-contact__icon"><mat-icon>alternate_email</mat-icon></div>
     <div class="lgcab-contact__content">
       <h3 class="lgcab-contact__header">E-POST</h3>
-      <p class="lgcab-contact__text">lennart@lgcab.se</p>
+      <p class="lgcab-contact__text">{{ contact.email }}</p>
     </div>
   </a>
-  <a
-    class="lgcab-contact__item"
-    target="_blank"
-    href="https://www.google.com/maps/place/Alstr%C3%B6mergatan+20,+112+47+Stockholm/@59.3364046,18.0264822,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d7ee698cc69:0x828372ff4ffe1ac1!8m2!3d59.3364046!4d18.028671"
-  >
+  <a class="lgcab-contact__item" target="_blank" [href]="contact.visitingAddress?.mapUrl">
     <div class="lgcab-contact__icon"><mat-icon>pin_drop</mat-icon></div>
     <div class="lgcab-contact__content">
       <h3 class="lgcab-contact__header">BESÖKSADRESS</h3>
-      <p class="lgcab-contact__text">C/O Ytterman Projekt AB</p>
-      <p class="lgcab-contact__text">Alströmergatan 14</p>
-      <p class="lgcab-contact__text">SE-102 28 Stockholm</p>
+      <p class="lgcab-contact__text"><markdown [data]="contact.visitingAddress?.content"></markdown></p>
     </div>
   </a>
   <div class="lgcab-contact__item">
     <div class="lgcab-contact__icon"><mat-icon>mail_outline</mat-icon></div>
     <div class="lgcab-contact__content">
       <h3 class="lgcab-contact__header">POSTADRESS</h3>
-      <p class="lgcab-contact__text">Svartviksslingan 69</p>
-      <p class="lgcab-contact__text">SE-167 38 Bromma</p>
+      <p class="lgcab-contact__text"><markdown [data]="contact.postAddress?.content"></markdown></p>
     </div>
   </div>
   <div class="lgcab-contact__item">
     <div class="lgcab-contact__icon"><mat-icon>work</mat-icon></div>
     <div class="lgcab-contact__content">
       <h3 class="lgcab-contact__header">ORGANISATIONSNUMMER</h3>
-      <div class="lgcab-conact__text">556394-2530</div>
+      <div class="lgcab-conact__text">{{ contact.organizationNo }}</div>
     </div>
   </div>
 </div>

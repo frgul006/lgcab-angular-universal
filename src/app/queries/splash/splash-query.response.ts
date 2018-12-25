@@ -1,5 +1,5 @@
 import { Splash } from '../../model/splash.model';
 
-export interface SplashResponse {
+export interface SplashQueryReponse {
   splashes: Splash[];
 }

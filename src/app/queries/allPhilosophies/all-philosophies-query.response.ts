@@ -1,5 +1,5 @@
 import { Philosophy } from '../../model/philosophy.model';
 
-export interface AllPhilosophiesQuery {
+export interface AllPhilosophiesQueryResponse {
   philosophies: Philosophy[];
 }

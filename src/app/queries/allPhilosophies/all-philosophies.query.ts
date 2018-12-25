@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const allPhilosophies = gql`
+export const allPhilosophiesQuery = gql`
   query allPhilosophies {
     philosophies(orderBy: order_ASC) {
       order

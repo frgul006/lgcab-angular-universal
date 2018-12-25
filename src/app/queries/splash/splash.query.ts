@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const splash = gql`
+export const splashQuery = gql`
   query splash {
     splashes {
       title

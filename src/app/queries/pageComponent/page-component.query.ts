@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const componentBySlug = gql`
+export const componentBySlugQuery = gql`
   query componentBySlug($slug: String!) {
     pageComponent(where: { slug: $slug }) {
       slug

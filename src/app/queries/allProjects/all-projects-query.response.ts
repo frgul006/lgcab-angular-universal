@@ -1,5 +1,5 @@
 import { Project } from '../../model/project.model';
 
-export interface AllProjectsQuery {
+export interface AllProjectsQueryResponse {
   projects: Project[];
 }
