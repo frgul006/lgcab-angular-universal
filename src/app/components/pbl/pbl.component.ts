@@ -6,10 +6,6 @@ import { PageComponent } from '../../model/page-component.model';
   templateUrl: './pbl.component.html',
   styleUrls: ['./pbl.component.scss']
 })
-export class PblComponent implements OnInit {
+export class PblComponent {
   @Input() pageComponent: PageComponent;
-
-  constructor() {}
-
-  ngOnInit() {}
 }

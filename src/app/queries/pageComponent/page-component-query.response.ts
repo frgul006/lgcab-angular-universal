@@ -1,5 +1,5 @@
 import { PageComponent } from '../../model/page-component.model';
 
-export interface PageComponentBySlugQuery {
+export interface PageComponentBySlugQueryResponse {
   pageComponent: PageComponent;
 }

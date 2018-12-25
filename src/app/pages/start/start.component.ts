@@ -6,6 +6,7 @@ import { Philosophy } from '../../model/philosophy.model';
 import { Observable } from 'rxjs';
 import { PageComponent } from '../../model/page-component.model';
 import { Splash } from '../../model/splash.model';
+import { Contact } from '../../model/contact.model';
 
 @Component({
   selector: 'lgcab-start',
@@ -18,6 +19,7 @@ export class StartComponent implements OnInit {
   public intro$: Observable<PageComponent>;
   public pbl$: Observable<PageComponent>;
   public splash$: Observable<Splash>;
+  public contact$: Observable<Contact>;
 
   constructor(
     private seo: SeoService,
@@ -32,6 +34,11 @@ export class StartComponent implements OnInit {
     this.getIntro();
     this.getPBL();
     this.getSplash();
+    this.getContact();
+  }
+
+  private getContact() {
+    this.contact$ = this.queryService.getContact();
   }
 
   private getSplash() {

@@ -1,10 +1,9 @@
 import gql from 'graphql-tag';
 
-export const allProjects = gql`
+export const allProjectsQuery = gql`
   query allProjects {
     projects(orderBy: title_ASC) {
       id
-      slug
       title
       description
       role

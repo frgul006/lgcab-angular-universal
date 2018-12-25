@@ -6,12 +6,8 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   styleUrls: ['./collage.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CollageComponent implements OnInit {
-  @Input() title;
-  @Input() description;
-  @Input() image;
-
-  constructor() {}
-
-  ngOnInit() {}
+export class CollageComponent {
+  @Input() title: string;
+  @Input() description: string;
+  @Input() image: string;
 }
