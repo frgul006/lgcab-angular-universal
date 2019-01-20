@@ -3,7 +3,7 @@
   margin-top: 4rem;
 
   &__inner {
-    padding: 68px 34px 0;
+    padding: 32px;
     margin: auto;
     max-width: 1080px;
     overflow: hidden;
@@ -12,5 +12,11 @@
   &__text {
     color: #fff;
     text-align: center;
+    margin: 0;
+  }
+
+  &__logo {
+    max-height: 50px;
+    margin-left: 0.5rem;
   }
 }
