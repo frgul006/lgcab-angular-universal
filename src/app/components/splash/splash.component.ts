@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Splash } from '../../model/splash.model';
 
 @Component({
   selector: 'lgcab-splash',
@@ -8,6 +9,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class SplashComponent {
   @Input() height: number;
+  @Input() splash: Splash;
 
   public imageUrl = '';
 

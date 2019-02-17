@@ -1,4 +1,4 @@
-<nav class="lgcab-nav">
+<nav class="lgcab-nav" role="navigation">
   <div class="lgcab-nav__item d-none d-md-block lgcab-nav__item--active"><a href="#home-section"> Start </a></div>
 
   <div class="lgcab-nav__item d-none d-md-block"><a href="#valkommen-section"> Välkommen </a></div>
@@ -11,14 +11,16 @@
 
   <div class="lgcab-nav__item d-none d-md-block"><a href="#pbl-section"> PBL </a></div>
 
-  <div class="lgcab-nav__item d-none d-md-block"><a href="/uppdrag/"> Uppdrag </a></div>
+  <div class="lgcab-nav__item d-none d-md-block"><a href="/uppdrag/index.html"> Uppdrag </a></div>
 
   <div class="lgcab-nav__mobile d-block d-md-none">
-    <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon aria-hidden="true">more_vert</mat-icon><span class="sr-only">Meny</span>
+    </button>
     <mat-menu #menu="matMenu">
       <a href="#home-section" mat-menu-item> Start </a> <a href="#valkommen-section" mat-menu-item> Välkommen </a>
       <a href="#filosofi-section" mat-menu-item> Filosofi </a> <a href="#pbl-section" mat-menu-item> PBL </a>
-      <a href="/uppdrag/" mat-menu-item> Uppdrag </a>
+      <a href="/uppdrag/index.html" mat-menu-item> Uppdrag </a>
     </mat-menu>
   </div>
 </nav>

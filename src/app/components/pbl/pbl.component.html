@@ -1,14 +1,5 @@
 <div class="lgcab-pbl">
-  <h2 class="lgcab-pbl__header">LGCAB upprättar kontrollplaner enl PBL.</h2>
-  <p class="lgcab-pbl__description">
-    Det ska finnas en kontrollplan för de flesta lov- och anmälningspliktiga bygg- och rivningsåtgärder. Kontrollplanen
-    bör omfatta kontroll av projektering, bygg- och rivningsåtgärder. Den ska innehålla uppgifter om de kontroller som
-    ska utföras samt på vilket sätt och mot vad kontrollresultatet ska jämföras. Det ska också framgå vem som ska utföra
-    kontrollerna.
-  </p>
-  <p>
-    Byggherren är ansvarig för att en kontrollplan upprättas och följs och i de fall kontrollansvarig krävs ska denne
-    biträda byggherren med detta. Byggnadsnämnden fastställer kontrollplanen i startbeskedet.
-  </p>
-  <p>Vi är certifierade och verkar som kontrollansvarig enligt PBL.</p>
+  <h2 class="lgcab-pbl__header">{{ pageComponent?.title }}</h2>
+  <p class="lgcab-pbl__intro" *ngIf="pageComponent?.preamble">{{ pageComponent?.preamble }}</p>
+  <p class="lgcab-pbl__description"><markdown [data]="pageComponent?.content"></markdown></p>
 </div>

@@ -1,15 +1,18 @@
 <div class="lgcab-anchor" id="home-section"></div>
-<lgcab-splash [height]="innerHeight" class="d-block"></lgcab-splash>
+<lgcab-splash [height]="innerHeight" [splash]="splash$ | async" class="d-block"></lgcab-splash>
 <div class="container">
   <div class="row mt-5 mb-5">
     <div class="col-lg-8">
       <div class="lgcab-anchor" id="valkommen-section"></div>
-      <lgcab-welcome></lgcab-welcome>
+      <lgcab-welcome [pageComponent]="intro$ | async"></lgcab-welcome>
     </div>
-    <div class="col-lg-4 mt-lg-0 mt-4"><lgcab-contact></lgcab-contact></div>
+    <div class="col-lg-4 mt-lg-0 mt-4"><lgcab-contact [contact]="contact$ | async"></lgcab-contact></div>
   </div>
 </div>
 <div class="lgcab-anchor" id="filosofi-section"></div>
-<lgcab-philosophy class="container-fluid pt-5 pb-5 mt-5 mb-5 lgcab-grey"></lgcab-philosophy>
+<lgcab-philosophy
+  [philosophies]="philosophies$ | async"
+  class="container-fluid pt-5 pb-5 mt-5 mb-5 lgcab-grey"
+></lgcab-philosophy>
 <div class="lgcab-anchor" id="pbl-section"></div>
-<lgcab-pbl class="d-block container"></lgcab-pbl>
+<lgcab-pbl [pageComponent]="pbl$ | async" class="d-block container"></lgcab-pbl>
