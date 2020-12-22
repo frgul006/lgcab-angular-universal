@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CollageComponent } from './collage/collage.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
-import { PblComponent } from './pbl/pbl.component';
+import { PageSectionComponent } from './page-section/page-section.component';
 import { SplashComponent } from './splash/splash.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PhilosophyComponent } from './philosophy/philosophy.component';
@@ -17,7 +17,7 @@ import { MarkdownModule } from 'ngx-markdown';
     PhilosophyComponent,
     WelcomeComponent,
     CollageComponent,
-    PblComponent,
+    PageSectionComponent,
     FooterComponent
   ],
   imports: [CommonModule, MatIconModule, MarkdownModule.forChild()],
@@ -27,7 +27,7 @@ import { MarkdownModule } from 'ngx-markdown';
     PhilosophyComponent,
     WelcomeComponent,
     CollageComponent,
-    PblComponent,
+    PageSectionComponent,
     FooterComponent
   ]
 })

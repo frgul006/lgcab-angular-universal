@@ -9,10 +9,16 @@
     <div class="col-lg-4 mt-lg-0 mt-4"><lgcab-contact [contact]="contact$ | async"></lgcab-contact></div>
   </div>
 </div>
+<div class="container-fluid pt-5 pb-5 mt-5 mb-5 lgcab-grey">
+  <div class="lgcab-anchor" id="pbl-section"></div>
+  <lgcab-page-section [pageComponent]="pbl$ | async" class="d-block container"></lgcab-page-section>
+</div>
+<div class="container-fluid pt-5 pb-5 mt-5 mb-5">
+  <div class="lgcab-anchor" id="eb-section"></div>
+  <lgcab-page-section [pageComponent]="eb$ | async" class="d-block container"></lgcab-page-section>
+</div>
 <div class="lgcab-anchor" id="filosofi-section"></div>
 <lgcab-philosophy
   [philosophies]="philosophies$ | async"
-  class="container-fluid pt-5 pb-5 mt-5 mb-5 lgcab-grey"
+  class="container-fluid pt-5 pb-5 mt-5 lgcab-grey"
 ></lgcab-philosophy>
-<div class="lgcab-anchor" id="pbl-section"></div>
-<lgcab-pbl [pageComponent]="pbl$ | async" class="d-block container"></lgcab-pbl>

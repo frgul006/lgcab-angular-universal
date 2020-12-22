@@ -18,6 +18,7 @@ export class StartComponent implements OnInit {
   public philosophies$: Observable<Philosophy[]>;
   public intro$: Observable<PageComponent>;
   public pbl$: Observable<PageComponent>;
+  public eb$: Observable<PageComponent>;
   public splash$: Observable<Splash>;
   public contact$: Observable<Contact>;
 
@@ -33,6 +34,7 @@ export class StartComponent implements OnInit {
     this.getPhilosophies();
     this.getIntro();
     this.getPBL();
+    this.getEntrepenadBesiktning();
     this.getSplash();
     this.getContact();
   }
@@ -51,6 +53,10 @@ export class StartComponent implements OnInit {
 
   private getPBL() {
     this.pbl$ = this.queryService.getPageComponentBySlug('pbl');
+  }
+
+  private getEntrepenadBesiktning() {
+    this.eb$ = this.queryService.getPageComponentBySlug('entrepenadbesiktning');
   }
 
   private getPhilosophies() {

@@ -2,10 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { PageComponent } from '../../model/page-component.model';
 
 @Component({
-  selector: 'lgcab-pbl',
-  templateUrl: './pbl.component.html',
-  styleUrls: ['./pbl.component.scss']
+  selector: 'lgcab-page-section',
+  templateUrl: './page-section.component.html',
+  styleUrls: ['./page-section.component.scss']
 })
-export class PblComponent {
+export class PageSectionComponent {
   @Input() pageComponent: PageComponent;
 }

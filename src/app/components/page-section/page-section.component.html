@@ -1,0 +1,5 @@
+<div>
+  <h2>{{ pageComponent?.title }}</h2>
+  <p *ngIf="pageComponent?.preamble">{{ pageComponent?.preamble }}</p>
+  <p><markdown [data]="pageComponent?.content"></markdown></p>
+</div>
