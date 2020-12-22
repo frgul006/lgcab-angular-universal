@@ -11,11 +11,21 @@
 </div>
 <div class="container-fluid pt-5 pb-5 mt-5 mb-5 lgcab-grey">
   <div class="lgcab-anchor" id="pbl-section"></div>
-  <lgcab-page-section [pageComponent]="pbl$ | async" class="d-block container"></lgcab-page-section>
+  <lgcab-page-section
+    [pageComponent]="pbl$ | async"
+    [imgUrl]="srbPBLImgUrl"
+    [imgAlt]="srbPBLImgAlt"
+    class="d-block container"
+  ></lgcab-page-section>
 </div>
 <div class="container-fluid pt-5 pb-5 mt-5 mb-5">
   <div class="lgcab-anchor" id="eb-section"></div>
-  <lgcab-page-section [pageComponent]="eb$ | async" class="d-block container"></lgcab-page-section>
+  <lgcab-page-section
+    [pageComponent]="eb$ | async"
+    [imgUrl]="srbEBImgUrl"
+    [imgAlt]="srbEBImgAlt"
+    class="d-block container"
+  ></lgcab-page-section>
 </div>
 <div class="lgcab-anchor" id="filosofi-section"></div>
 <lgcab-philosophy

@@ -22,6 +22,11 @@ export class StartComponent implements OnInit {
   public splash$: Observable<Splash>;
   public contact$: Observable<Contact>;
 
+  public srbEBImgUrl = '/assets/sbr_eb.jpg';
+  public srbEBImgAlt = 'Bild på Entrepenadbesiktmingsman-certifikat från SRB';
+  public srbPBLImgUrl = '/assets/sbr_ka.png';
+  public srbPBLImgAlt = 'Bild på Kontrollansvarig-certifikat från SRB';
+
   constructor(
     private seo: SeoService,
     @Inject(PLATFORM_ID) private platformId: Object,

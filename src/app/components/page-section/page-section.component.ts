@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PageComponent } from '../../model/page-component.model';
 
 @Component({
@@ -8,4 +8,6 @@ import { PageComponent } from '../../model/page-component.model';
 })
 export class PageSectionComponent {
   @Input() pageComponent: PageComponent;
+  @Input() imgUrl: string;
+  @Input() imgAlt: string;
 }
