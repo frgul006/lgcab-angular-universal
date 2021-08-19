@@ -12,6 +12,16 @@
     background-color: #333;
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
       0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+
+    .lgcab-nav__item--hero {
+      img {
+        display: none;
+      }
+
+      span {
+        display: block !important;
+      }
+    }
   }
 }
 
@@ -20,7 +30,6 @@
   padding: 30px 39px;
   width: 100%;
   justify-content: space-between;
-  
 
   @media only screen and (min-width: 768px) {
     width: inherit;
@@ -60,6 +69,14 @@
 
       a {
         font-size: 1.5rem;
+      }
+
+      span {
+        display: none;
+      }
+
+      img {
+        max-height: 65px;
       }
     }
 
