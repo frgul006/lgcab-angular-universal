@@ -2,6 +2,9 @@
   "name": "lgcab",
   "version": "8.2.0",
   "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/frgul006/lgcab-angular-universal.git"
