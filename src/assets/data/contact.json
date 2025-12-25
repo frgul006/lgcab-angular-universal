@@ -11,10 +11,5 @@
     "mapUrl": "https://www.google.com/maps/place/Slakthusplan+3,+121+62+Johanneshov"
   },
   "homepage": "https://www.lgcab.se",
-  "invoiceEmail": "mailto:inbox.lev.1690564@arkivplats.se",
-  "certifications": [
-    "Av Rise certifierad Kontrollansvarig, nr SC0813-11",
-    "Av Rise certifierad Entreprenadbesiktningsman, nr C000971",
-    "Medlem i SBR Byggingenjörerna"
-  ]
+  "invoiceEmail": "mailto:inbox.lev.1690564@arkivplats.se"
 }
