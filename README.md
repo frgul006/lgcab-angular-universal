@@ -4,6 +4,13 @@
 
 Served by Netlify using static site generation.
 
+## Content Updates
+
+Data is served from local JSON files under `src/assets/data` (GraphCMS/Apollo has been removed).
+
+- `src/assets/data/contact.json` drives the contact card, including the `invoiceEmail` field rendered as "Fakturor".
+- Other content (projects, philosophies, page components) lives alongside it in the same folder.
+
 ## Getting Started
 
 This demo is built following the [Angular-CLI Wiki guide](https://github.com/angular/angular-cli/wiki/stories-universal-rendering)
@@ -42,6 +49,15 @@ This repo demonstrates the use of 2 different forms of Server Side Rendering.
 
 **`npm run build:prerender && npm run serve:prerender`** - Compiles your application and prerenders your applications files, spinning up a demo http-server so you can view it on `http://localhost:8080`
 **Note**: To deploy your static site to a static hosting platform you will have to deploy the `dist/browser` folder, rather than the usual `dist`
+
+## Maintenance
+
+- Unused code check: `yarn check:unused` (knip). This is intended for Node 18 and may report unresolved SSR build outputs like `./server/main` when the server bundle is not built.
+- Upgrade plan: see `UPGRADE_PLAN.md` for the Angular 17 SSR/SSG migration steps.
+
+## Netlify Checks
+
+Netlify deploy previews run for PRs. Use `gh pr checks <pr-number>` to see status; if it returns nothing, Netlify has not started the checks yet.
 
 ## Universal "Gotchas"
 
