@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Apollo } from 'apollo-angular';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Contact } from '../model/contact.model';
@@ -7,53 +7,32 @@ import { PageComponent } from '../model/page-component.model';
 import { Philosophy } from '../model/philosophy.model';
 import { Project } from '../model/project.model';
 import { Splash } from '../model/splash.model';
-import { allPhilosophiesQuery, AllPhilosophiesQueryResponse } from './allPhilosophies';
-import { allProjectsQuery, AllProjectsQueryResponse } from './allProjects';
-import { contactQuery, ContactQueryResponse } from './contact';
-import { componentBySlugQuery, PageComponentBySlugQueryResponse } from './pageComponent';
-import { splashQuery, SplashQueryReponse } from './splash';
 
 @Injectable({ providedIn: 'root' })
 export class QueryService {
-  constructor(private readonly apollo: Apollo) {}
+  private readonly dataRoot = 'assets/data';
+
+  constructor(private readonly http: HttpClient) {}
 
   getContact(): Observable<Contact> {
-    const ref = this.apollo.watchQuery<ContactQueryResponse>({
-      query: contactQuery
-    });
-    return ref.valueChanges.pipe(map(result => result.data.contacts[0]));
+    return this.http.get<Contact>(`${this.dataRoot}/contact.json`);
   }
 
   getSplash(): Observable<Splash> {
-    const ref = this.apollo.watchQuery<SplashQueryReponse>({
-      query: splashQuery
-    });
-    return ref.valueChanges.pipe(map(result => result.data.splashes[0]));
+    return this.http.get<Splash>(`${this.dataRoot}/splash.json`);
   }
 
   getPageComponentBySlug(slug: string): Observable<PageComponent> {
-    const ref = this.apollo.watchQuery<PageComponentBySlugQueryResponse>({
-      query: componentBySlugQuery,
-      variables: {
-        slug
-      }
-    });
-    return ref.valueChanges.pipe(map(result => result.data.pageComponent));
+    return this.http
+      .get<Array<PageComponent & { slug?: string }>>(`${this.dataRoot}/page-components.json`)
+      .pipe(map(components => components.find(component => component.slug === slug) || null));
   }
 
   getAllPhilosophies(): Observable<Philosophy[]> {
-    const ref = this.apollo.watchQuery<AllPhilosophiesQueryResponse>({
-      query: allPhilosophiesQuery
-    });
-
-    return ref.valueChanges.pipe(map(result => result.data.philosophies));
+    return this.http.get<Philosophy[]>(`${this.dataRoot}/philosophies.json`);
   }
 
   getAllProjects(): Observable<Project[]> {
-    const projectsRef = this.apollo.watchQuery<AllProjectsQueryResponse>({
-      query: allProjectsQuery
-    });
-
-    return projectsRef.valueChanges.pipe(map(result => result.data.projects));
+    return this.http.get<Project[]>(`${this.dataRoot}/projects.json`);
   }
 }
