@@ -1,13 +1,20 @@
 {
   "phoneNo": "0703-34 92 23",
   "organizationNo": "556394-2530",
-  "email": "info@lgcab.se",
+  "email": "lennart@lgcab.se",
   "postAddress": {
-    "content": "Lennart Gullberg Consulting AB  \nGustavslundsvägen 12  \n167 51 Bromma",
-    "mapUrl": null
+    "content": "Lennart Gullberg  \nLennart Gullberg Consulting AB  \nGökvägen 4B  \n141 72 Segeltorp",
+    "mapUrl": "https://www.google.com/maps/place/G%C3%B6kv%C3%A4gen+4B,+141+72+Segeltorp"
   },
   "visitingAddress": {
-    "content": "Lennart Gullberg Consulting AB  \nGustavslundsvägen 12  \n167 51 Bromma",
-    "mapUrl": "https://www.google.com/maps/place/Gustavslundsv%C3%A4gen+12,+167+51+Bromma/@59.3326987,17.982314,17z/data=!4m13!1m7!3m6!1s0x465f76217c4b7cf5:0x2c59a617a6a0245d!2sGustavslundsv%C3%A4gen+12,+167+51+Bromma!3b1!8m2!3d59.332696!4d17.9845028!3m4!1s0x465f76217c4b7cf5:0x2c59a617a6a0245d!8m2!3d59.332696!4d17.9845028"
-  }
+    "content": "A House B\u00f6rshuset  \nSlakthusplan 3  \n121 62 Stockholm",
+    "mapUrl": "https://www.google.com/maps/place/Slakthusplan+3,+121+62+Johanneshov"
+  },
+  "homepage": "https://www.lgcab.se",
+  "invoiceEmail": "mailto:inbox.lev.1690564@arkivplats.se",
+  "certifications": [
+    "Av Rise certifierad Kontrollansvarig, nr SC0813-11",
+    "Av Rise certifierad Entreprenadbesiktningsman, nr C000971",
+    "Medlem i SBR Byggingenjörerna"
+  ]
 }
