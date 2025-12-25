@@ -6,10 +6,17 @@
 - Modernize tooling (ESLint, Angular Material 17, RxJS 7, TypeScript 5, Node 20) while keeping static JSON content under `src/assets/data`.
 - Keep Netlify-friendly prerendered output (`dist/browser`), drop `--openssl-legacy-provider` workarounds.
 
+## Recently Merged (master)
+- Removed GraphCMS/Apollo dependencies, GraphQL query files, legacy fetch scripts, and `response.ts`.
+- Dropped the HammerJS import.
+- Added knip (`yarn check:unused`), `knip.json`, and `src/tsconfig.spec.json` for tooling.
+- Updated contact data (new addresses/email/homepage/invoice email) and rendered the invoice email link in the contact card.
+- Added maintenance notes to `README.md` and `AGENTS.md`, including Netlify/CLI guidance.
+
 ## Current State (snapshot)
 - Angular 8 + Angular Universal 8 with custom `server.ts`/`prerender.ts` and `static.paths.ts`.
-- Dependencies are pre-Ivy (TS 3.5, RxJS 6.5, Material 8, Bootstrap 4, HammerJS import). TSLint/Codelyzer.
-- Content already local: `src/assets/data/*.json` fetched by `QueryService`; GraphCMS/Apollo packages and GraphQL query files are unused.
+- Dependencies are pre-Ivy (TS 3.5, RxJS 6.5, Material 8, Bootstrap 4). TSLint/Codelyzer.
+- Content is local: `src/assets/data/*.json` fetched by `QueryService`; GraphCMS/Apollo packages and query files have been removed.
 - PWA/service worker wired manually via `ngsw-config` + copy script.
 - UI/UX to preserve:
   - Sticky nav bar that switches to fixed + dark background after scrolling past splash (`NavComponent` scroll listener + class toggle).
@@ -18,10 +25,11 @@
   - Global styles: Roboto/Material Icons, smooth scroll, `lgcab-grey` blocks, elevation helpers in `material.scss`.
 
 ## Cleanup Targets (pre-migration)
-- Remove GraphCMS/Apollo deps (`apollo-*`, `graphql`, `graphql-tag`) and unused query files under `src/app/queries/*/*.query.ts`.
-- Delete legacy fetch scripts (`scripts/fetch-hygraph-data.js`, `scripts/fetch-graphassets.js`) and `response.ts` model stub.
-- Drop HammerJS import (`src/main.ts`) and the legacy module map loader (`ModuleMapLoaderModule`).
-- Replace TSLint/Codelyzer with ESLint; remove legacy resolutions/openssl flags.
+- Done: Removed GraphCMS/Apollo deps and unused query files under `src/app/queries/*/*.query.ts`.
+- Done: Deleted legacy fetch scripts (`scripts/fetch-hygraph-data.js`, `scripts/fetch-graphassets.js`) and `response.ts`.
+- Done: Dropped HammerJS import (`src/main.ts`).
+- Remaining: Replace TSLint/Codelyzer with ESLint; remove legacy resolutions/openssl flags.
+- Remaining: Remove legacy module map loader (`ModuleMapLoaderModule`) once the new Angular 17 SSR setup is in place.
 
 ## Migration Approach (fresh Angular 17 SSR/SSG)
 1) **Scaffold**: `ng new lgcab --style=scss --routing --ssr --no-standalone` (keeps NgModules for easier port; standalone later if desired). Target Node 20 in `.nvmrc`/Netlify.
@@ -57,7 +65,7 @@
 - Dialog animations require `provideAnimations`/`BrowserAnimationsModule` in both browser/SSR contexts.
 
 ## Immediate Next Steps
-1) Strip GraphCMS/Apollo deps and unused query/script files in this branch.
-2) Scaffold new Angular 17 SSR project (per above flags) in a fresh `apps` folder or new repo root.
-3) Copy assets/styles/data, port components/modules, and wire routes + SSR/prerender.
-4) Re-enable PWA/service worker, then run `ng run lgcab:prerender` and validate UI parity locally before updating Netlify config.
+1) Scaffold new Angular 17 SSR project (per above flags) in a fresh `apps` folder or new repo root.
+2) Copy assets/styles/data, port components/modules, and wire routes + SSR/prerender.
+3) Re-enable PWA/service worker, then run `ng run lgcab:prerender` and validate UI parity locally before updating Netlify config.
+4) Re-run `yarn check:unused` after the Angular 17/TypeScript upgrade and clean up remaining unused deps.
