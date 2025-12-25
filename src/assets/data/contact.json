@@ -1,0 +1,13 @@
+{
+  "phoneNo": "0703-34 92 23",
+  "organizationNo": "556394-2530",
+  "email": "info@lgcab.se",
+  "postAddress": {
+    "content": "Lennart Gullberg Consulting AB  \nGustavslundsvägen 12  \n167 51 Bromma",
+    "mapUrl": null
+  },
+  "visitingAddress": {
+    "content": "Lennart Gullberg Consulting AB  \nGustavslundsvägen 12  \n167 51 Bromma",
+    "mapUrl": "https://www.google.com/maps/place/Gustavslundsv%C3%A4gen+12,+167+51+Bromma/@59.3326987,17.982314,17z/data=!4m13!1m7!3m6!1s0x465f76217c4b7cf5:0x2c59a617a6a0245d!2sGustavslundsv%C3%A4gen+12,+167+51+Bromma!3b1!8m2!3d59.332696!4d17.9845028!3m4!1s0x465f76217c4b7cf5:0x2c59a617a6a0245d!8m2!3d59.332696!4d17.9845028"
+  }
+}

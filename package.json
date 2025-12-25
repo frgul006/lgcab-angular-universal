@@ -2,13 +2,16 @@
   "name": "lgcab",
   "version": "8.2.0",
   "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/frgul006/lgcab-angular-universal.git"
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider ng serve",
     "build": "ng build",
     "lint": "ng lint lgcab",
     "ngsw-config": "node_modules/.bin/ngsw-config dist/browser ngsw-config.json",
@@ -63,6 +66,7 @@
     "@angular/compiler-cli": "8.2.14",
     "@angular/language-service": "8.2.14",
     "@types/node": "^8.0.30",
+    "@types/minimatch": "3.0.3",
     "codelyzer": "^5.2.1",
     "http-server": "^0.12.3",
     "pre-commit": "^1.2.2",
@@ -70,5 +74,9 @@
     "ts-loader": "^4.2.0",
     "tslint": "^5.7.0",
     "typescript": "3.5.3"
-  }
+  },
+  "resolutions": {
+    "minimatch": "3.0.4"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
