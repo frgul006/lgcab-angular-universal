@@ -22,7 +22,6 @@ import { StartComponent } from './start/start.component';
     MatExpansionModule,
     MatDialogModule,
     RouterModule
-  ],
-  entryComponents: [ProjectsDialogComponent]
+  ]
 })
 export class PagesModule {}

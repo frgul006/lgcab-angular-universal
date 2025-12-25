@@ -5,7 +5,7 @@
         <h1>Uppdrag</h1>
 
         <div class="row">
-          <div *ngFor="let project of projects | async" class="col-md-6 mb-3">
+          <div *ngFor="let project of (projects | async) || []" class="col-md-6 mb-3">
             <mat-card class="lgcab-project">
               <a href="javascript:void(0)" (click)="openDialog(project)" class="lgcab-project__link">{{
                 project.title

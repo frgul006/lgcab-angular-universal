@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'lgcab-collage',
@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CollageComponent {
-  @Input() title: string;
-  @Input() description: string;
-  @Input() image: string;
+  @Input() title = '';
+  @Input() description = '';
+  @Input() image = '';
 }

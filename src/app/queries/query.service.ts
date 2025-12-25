@@ -1,38 +1,35 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 import { Contact } from '../model/contact.model';
 import { PageComponent } from '../model/page-component.model';
 import { Philosophy } from '../model/philosophy.model';
 import { Project } from '../model/project.model';
 import { Splash } from '../model/splash.model';
+import { CONTACT } from '../data/contact.data';
+import { PAGE_COMPONENTS } from '../data/page-components.data';
+import { PHILOSOPHIES } from '../data/philosophies.data';
+import { PROJECTS } from '../data/projects.data';
+import { SPLASH } from '../data/splash.data';
 
 @Injectable({ providedIn: 'root' })
 export class QueryService {
-  private readonly dataRoot = 'assets/data';
-
-  constructor(private readonly http: HttpClient) {}
-
   getContact(): Observable<Contact> {
-    return this.http.get<Contact>(`${this.dataRoot}/contact.json`);
+    return of(CONTACT);
   }
 
   getSplash(): Observable<Splash> {
-    return this.http.get<Splash>(`${this.dataRoot}/splash.json`);
+    return of(SPLASH);
   }
 
-  getPageComponentBySlug(slug: string): Observable<PageComponent> {
-    return this.http
-      .get<Array<PageComponent & { slug?: string }>>(`${this.dataRoot}/page-components.json`)
-      .pipe(map(components => components.find(component => component.slug === slug) || null));
+  getPageComponentBySlug(slug: string): Observable<PageComponent | null> {
+    return of(PAGE_COMPONENTS.find(component => component.slug === slug) ?? null);
   }
 
   getAllPhilosophies(): Observable<Philosophy[]> {
-    return this.http.get<Philosophy[]>(`${this.dataRoot}/philosophies.json`);
+    return of(PHILOSOPHIES);
   }
 
   getAllProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${this.dataRoot}/projects.json`);
+    return of(PROJECTS);
   }
 }

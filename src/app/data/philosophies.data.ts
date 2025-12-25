@@ -1,4 +1,6 @@
-[
+import { Philosophy } from '../model/philosophy.model';
+
+export const PHILOSOPHIES: Philosophy[] = [
   {
     "order": 1,
     "title": "Lugn",
@@ -23,4 +25,4 @@
       "url": "assets/media/graphassets/W8T9BlD6R8saA2RoRiyt.jpg"
     }
   }
-]
+];

@@ -14,13 +14,13 @@ import { Contact } from '../../model/contact.model';
   styleUrls: ['./start.component.scss']
 })
 export class StartComponent implements OnInit {
-  public innerHeight: number;
-  public philosophies$: Observable<Philosophy[]>;
-  public intro$: Observable<PageComponent>;
-  public pbl$: Observable<PageComponent>;
-  public eb$: Observable<PageComponent>;
-  public splash$: Observable<Splash>;
-  public contact$: Observable<Contact>;
+  public innerHeight = 0;
+  public philosophies$!: Observable<Philosophy[]>;
+  public intro$!: Observable<PageComponent | null>;
+  public pbl$!: Observable<PageComponent | null>;
+  public eb$!: Observable<PageComponent | null>;
+  public splash$!: Observable<Splash>;
+  public contact$!: Observable<Contact>;
 
   public srbEBImgUrl = '/assets/sbr_eb.jpg';
   public srbEBImgAlt = 'Bild på Entrepenadbesiktmingsman-certifikat från SRB';
@@ -29,7 +29,7 @@ export class StartComponent implements OnInit {
 
   constructor(
     private seo: SeoService,
-    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(PLATFORM_ID) private platformId: object,
     private readonly queryService: QueryService
   ) {}
 

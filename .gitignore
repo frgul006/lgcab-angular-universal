@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/bazel-out
 
 # dependencies
 /node_modules
@@ -23,9 +24,13 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.history/*
 
 # misc
+/.angular/cache
+/.cursor/
 /.sass-cache
+.sass-cache/
 /connect.lock
 /coverage
 /libpeerconnection.log
@@ -41,3 +46,4 @@ selenium.js
 Thumbs.db
 # Local Netlify folder
 .netlify
+/.venv/

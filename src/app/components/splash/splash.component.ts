@@ -8,12 +8,8 @@ import { Splash } from '../../model/splash.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SplashComponent {
-  @Input() height: number;
-  @Input() splash: Splash;
+  @Input() height = 0;
+  @Input() splash: Splash | null = null;
 
-  public imageUrl = '';
-
-  constructor() {
-    this.imageUrl = '/assets/splash-min.jpg';
-  }
+  public imageUrl = '/assets/splash-min.jpg';
 }

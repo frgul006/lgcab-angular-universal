@@ -3,19 +3,18 @@
 ## Hosting
 
 Served by Netlify using static site generation.
+See `DEPLOYMENT.md` for Netlify configuration details.
 
 ## Content Updates
 
-Data is served from local JSON files under `src/assets/data` (GraphCMS/Apollo has been removed).
+Content is served from typed TS exports under `src/app/data` (GraphCMS/Apollo has been removed).
 
-- `src/assets/data/contact.json` drives the contact card, including the `invoiceEmail` field rendered as "Fakturor".
+- `src/app/data/contact.data.ts` drives the contact card, including the `invoiceEmail` field rendered as "Fakturor".
 - Other content (projects, philosophies, page components) lives alongside it in the same folder.
 
 ## Getting Started
 
-This demo is built following the [Angular-CLI Wiki guide](https://github.com/angular/angular-cli/wiki/stories-universal-rendering)
-
-We're utilizing packages from the [Angular Universal @nguniversal](https://github.com/angular/universal) repo, such as [ng-module-map-ngfactory-loader](https://github.com/angular/universal/modules/module-map-ngfactory-loader) to enable Lazy Loading.
+This app uses Angular 17 SSR via `@angular/ssr` with a `server.ts` entry and prerender enabled in the build config.
 
 ---
 
@@ -26,18 +25,17 @@ This repo demonstrates the use of 2 different forms of Server Side Rendering.
 **Prerender**
 
 - Happens at build time
-- Renders your application and replaces the dist index.html with a version rendered at the route `/`.
+- Renders your application and outputs static HTML under `dist/browser`.
 
-**Server-Side Rendering(ssr)**
+**Server-Side Rendering (SSR)**
 
 - Happens at runtime
-- Uses `ngExpressEngine` to render your application on the fly at the requested url.
+- Uses the Angular SSR server (`server.ts`) to render your application on the fly at the requested URL.
 
 ---
 
 ### Installation
-
-- `npm install` or `yarn`
+- `npm install`
 
 ### Development (Client-side only rendering)
 
@@ -45,15 +43,15 @@ This repo demonstrates the use of 2 different forms of Server Side Rendering.
 
 ### Production (also for testing SSR/Pre-rendering locally)
 
-**`npm run build:ssr && npm run serve:ssr`** - Compiles your application and spins up a Node Express to serve your Universal application on `http://localhost:4000`.
+**`npm run build && npm run serve:ssr`** - Builds the app and spins up the Node SSR server on `http://localhost:4000`.
 
-**`npm run build:prerender && npm run serve:prerender`** - Compiles your application and prerenders your applications files, spinning up a demo http-server so you can view it on `http://localhost:8080`
-**Note**: To deploy your static site to a static hosting platform you will have to deploy the `dist/browser` folder, rather than the usual `dist`
+**`npm run build:prerender && npm run serve:prerender`** - Builds and prerenders the app, then serves it on `http://localhost:8080`.
+**Note**: For static hosting, deploy the `dist/browser` folder.
 
 ## Maintenance
-
-- Unused code check: `yarn check:unused` (knip). This is intended for Node 18 and may report unresolved SSR build outputs like `./server/main` when the server bundle is not built.
-- Upgrade plan: see `UPGRADE_PLAN.md` for the Angular 17 SSR/SSG migration steps.
+- Unused code check: `npm run check:unused` (knip).
+- Lint: `npm run lint`.
+- Upgrade plan: see `UPGRADE_PLAN.md` for the migration steps.
 
 ## Netlify Checks
 

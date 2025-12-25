@@ -1,10 +1,10 @@
 import { ProjectStatus } from './project-status.model';
 
 export interface Project {
-  id: number;
+  id: string;
   title: string;
-  description: string;
+  description: string | null;
   role: string;
-  createdAt: Date;
+  createdAt: string;
   currentStatus: ProjectStatus;
 }

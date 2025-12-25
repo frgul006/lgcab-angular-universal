@@ -1,4 +1,4 @@
-export class Address {
+export interface Address {
   content: string; // markdown
   mapUrl: string;
 }

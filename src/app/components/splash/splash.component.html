@@ -1,6 +1,9 @@
 <div
   class="lgcab-splash"
-  [ngStyle]="{ 'min-height': height + 'px', 'background-image': 'url(' + splash?.backgroundImage.url + ')' }"
+  [ngStyle]="{
+    'min-height': height + 'px',
+    'background-image': 'url(' + (splash?.backgroundImage?.url || imageUrl) + ')'
+  }"
 >
   <div class="lgcab-splash__overlay"></div>
   <div class="lgcab-splash__slogan">

@@ -1,17 +1,15 @@
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { TransferHttpCacheModule } from '@nguniversal/common';
-import { MarkdownModule, MarkdownModuleConfig, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
-import { environment } from '../environments/environment';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { NgModule, isDevMode } from '@angular/core';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MARKED_OPTIONS, MarkedOptions, MarkedRenderer, MarkdownModule } from 'ngx-markdown';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { ContainersModule } from './containers/containers.module';
 import { PagesModule } from './pages/pages.module';
-import { ProjectsComponent } from './pages/projects/projects.component';
-import { StartComponent } from './pages/start/start.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 export function markedOptionsFactory(): MarkedOptions {
   const renderer = new MarkedRenderer();
@@ -26,34 +24,33 @@ export function markedOptionsFactory(): MarkedOptions {
     renderer,
     gfm: true,
     breaks: false,
-    pedantic: false,
-    smartLists: true,
-    smartypants: false
+    pedantic: false
   };
 }
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'lgcab' }),
-    HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     ComponentsModule,
     ContainersModule,
     PagesModule,
     MarkdownModule.forRoot({
       markedOptions: {
-        provide: MarkedOptions,
+        provide: MARKED_OPTIONS,
         useFactory: markedOptionsFactory
       }
     }),
-    RouterModule.forRoot([
-      { path: '', component: StartComponent, pathMatch: 'full' },
-      { path: 'uppdrag', component: ProjectsComponent }
-    ]),
-    TransferHttpCacheModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
-  providers: [],
+  providers: [provideClientHydration(), provideHttpClient(withFetch())],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
