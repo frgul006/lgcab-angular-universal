@@ -28,13 +28,13 @@
       <p class="lgcab-contact__text"><markdown [data]="contact.visitingAddress?.content"></markdown></p>
     </div>
   </a>
-  <div class="lgcab-contact__item">
+  <a class="lgcab-contact__item" target="_blank" rel="noreferrer" [href]="contact.postAddress?.mapUrl">
     <div class="lgcab-contact__icon"><mat-icon>mail_outline</mat-icon></div>
     <div class="lgcab-contact__content">
       <h3 class="lgcab-contact__header">POSTADRESS</h3>
       <p class="lgcab-contact__text"><markdown [data]="contact.postAddress?.content"></markdown></p>
     </div>
-  </div>
+  </a>
   <div class="lgcab-contact__item">
     <div class="lgcab-contact__icon"><mat-icon>work</mat-icon></div>
     <div class="lgcab-contact__content">
