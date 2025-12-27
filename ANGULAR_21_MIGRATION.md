@@ -5,21 +5,21 @@
 - Keep existing UI/UX and the local data pipeline intact.
 - Keep Netlify-friendly `dist/browser` output and service worker behavior.
 
-## Current Baseline
-- Angular 17.3 NgModule app at repo root.
-- SSR via `@angular/ssr` `CommonEngine` (`server.ts`).
+## Current State
+- Angular 21 NgModule app at repo root.
+- SSR via `@angular/ssr/node` `CommonEngine` (`server.ts`).
 - Prerender enabled in `angular.json`; outputs `dist/browser` + `dist/server`.
 - Service worker enabled in production via `ngsw-config.json`.
-- Node 20 pinned in `.nvmrc` and `netlify.toml`.
+- Node 22.12 pinned in `.nvmrc` and `netlify.toml`.
 
-## Target Versions (confirm during prep)
-- Node: ^20.19.0 || ^22.12.0 || >=24.0.0
-- TypeScript: TBD
-- RxJS: TBD
-- zone.js: TBD
+## Target Versions
+- Node: ^22.12.0
+- TypeScript: ~5.9.x
+- RxJS: ~7.8.x
+- zone.js: ~0.15.x
 - Angular core/cli/material/cdk/ssr: 21.x
 
-## Upgrade Path (do not skip majors)
+## Upgrade Path (completed)
 1) Prep: clean working tree, update Node to target, reinstall deps.
 2) 17 -> 18: `npx ng update @angular/cli@18 @angular/core@18 @angular/material@18 @angular/cdk@18`
 3) 18 -> 19: `npx ng update @angular/cli@19 @angular/core@19 @angular/material@19 @angular/cdk@19`
@@ -42,3 +42,4 @@
 
 ## Status
 - Branch: `chore/angular-21-migration`
+- Templates migrated to block control flow syntax.
