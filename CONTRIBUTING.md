@@ -1,6 +1,6 @@
 # Contributing Guide
 
-Thanks for contributing! This repo is an Angular 17 SSR application with prerendering enabled. Please follow the steps below to keep changes consistent and easy to review.
+Thanks for contributing! This repo is an Angular 21 SSR application with prerendering enabled. Please follow the steps below to keep changes consistent and easy to review.
 
 ## Getting Started
 - Install dependencies: `npm install`.
