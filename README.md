@@ -14,7 +14,7 @@ Content is served from typed TS exports under `src/app/data` (GraphCMS/Apollo ha
 
 ## Getting Started
 
-This app uses Angular 17 SSR via `@angular/ssr` with a `server.ts` entry and prerender enabled in the build config.
+This app uses Angular 21 SSR via `@angular/ssr` with a `server.ts` entry and prerender enabled in the build config.
 
 ---
 
@@ -51,7 +51,6 @@ This repo demonstrates the use of 2 different forms of Server Side Rendering.
 ## Maintenance
 - Unused code check: `npm run check:unused` (knip).
 - Lint: `npm run lint`.
-- Upgrade plan: see `UPGRADE_PLAN.md` for the migration steps.
 
 ## Netlify Checks
 

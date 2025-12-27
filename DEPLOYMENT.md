@@ -23,7 +23,7 @@
 - `netlify.toml` only sets build environment variables (no build/publish overrides)
 
 ## Environment variables
-- `NODE_VERSION=20` in production, deploy-preview, branch-deploy, and dev contexts
+- `NODE_VERSION=22.12.0` in production, deploy-preview, branch-deploy, and dev contexts
 - Build image: `focal` (Ubuntu 20.04)
 
 ## Deploy contexts
