@@ -3,8 +3,10 @@
     <div class="col"><h2 class="lgcab-philosophy__header">Filosofi</h2></div>
   </div>
   <div class="row">
-    <div class="col-lg-12" *ngFor="let item of philosophies || []">
-      <lgcab-collage [title]="item.title" [description]="item.content" [image]="item.image.url"></lgcab-collage>
-    </div>
+    @for (item of philosophies || []; track item) {
+      <div class="col-lg-12">
+        <lgcab-collage [title]="item.title" [description]="item.content" [image]="item.image.url"></lgcab-collage>
+      </div>
+    }
   </div>
 </div>

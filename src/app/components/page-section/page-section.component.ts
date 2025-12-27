@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { PageComponent } from '../../model/page-component.model';
 
 @Component({
-  selector: 'lgcab-page-section',
-  templateUrl: './page-section.component.html',
-  styleUrls: ['./page-section.component.scss']
+    selector: 'lgcab-page-section',
+    templateUrl: './page-section.component.html',
+    styleUrls: ['./page-section.component.scss'],
+    standalone: false
 })
 export class PageSectionComponent {
   @Input() pageComponent: PageComponent | null = null;

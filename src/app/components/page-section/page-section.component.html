@@ -1,10 +1,14 @@
 <div class="lgcab-page-section">
   <div class="lgcab-page-section__content">
     <h2 class="lgcab-page-section__header">{{ pageComponent?.title }}</h2>
-    <p *ngIf="pageComponent?.preamble">{{ pageComponent?.preamble }}</p>
+    @if (pageComponent?.preamble) {
+      <p>{{ pageComponent?.preamble }}</p>
+    }
     <div><markdown [data]="pageComponent?.content"></markdown></div>
   </div>
   <div class="lgcab-page-section__img">
-    <img *ngIf="imgUrl" [src]="imgUrl" [alt]="imgAlt" />
+    @if (imgUrl) {
+      <img [src]="imgUrl" [alt]="imgAlt" />
+    }
   </div>
 </div>

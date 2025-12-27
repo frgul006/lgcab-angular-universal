@@ -1,45 +1,49 @@
 <div class="lgcab-anchor" id="contact-section"></div>
-<div class="lgcab-contact" *ngIf="contact">
-  <a class="lgcab-contact__item" [href]="'tel:' + contact.phoneNo">
-    <div class="lgcab-contact__icon"><mat-icon>phone</mat-icon></div>
-    <div class="lgcab-contact__content">
-      <h3 class="lgcab-contact__header">TELEFON</h3>
-      <p class="lgcab-contact__text">{{ contact.phoneNo }}</p>
-    </div>
-  </a>
-  <a class="lgcab-contact__item" [href]="'mailto:' + contact.email">
-    <div class="lgcab-contact__icon"><mat-icon>alternate_email</mat-icon></div>
-    <div class="lgcab-contact__content">
-      <h3 class="lgcab-contact__header">E-POST</h3>
-      <p class="lgcab-contact__text">{{ contact.email }}</p>
-    </div>
-  </a>
-  <a class="lgcab-contact__item" *ngIf="contact.invoiceEmail" [href]="contact.invoiceEmail">
-    <div class="lgcab-contact__icon"><mat-icon>receipt_long</mat-icon></div>
-    <div class="lgcab-contact__content">
-      <h3 class="lgcab-contact__header">FAKTUROR</h3>
-      <p class="lgcab-contact__text">{{ contact.invoiceEmail.replace('mailto:', '') }}</p>
-    </div>
-  </a>
-  <a class="lgcab-contact__item" target="_blank" rel="noreferrer" [href]="contact.visitingAddress.mapUrl">
-    <div class="lgcab-contact__icon"><mat-icon>pin_drop</mat-icon></div>
-    <div class="lgcab-contact__content">
-      <h3 class="lgcab-contact__header">BESÖKSADRESS</h3>
-      <div class="lgcab-contact__text"><markdown [data]="contact.visitingAddress.content"></markdown></div>
-    </div>
-  </a>
-  <a class="lgcab-contact__item" target="_blank" rel="noreferrer" [href]="contact.postAddress.mapUrl">
-    <div class="lgcab-contact__icon"><mat-icon>mail_outline</mat-icon></div>
-    <div class="lgcab-contact__content">
-      <h3 class="lgcab-contact__header">POSTADRESS</h3>
-      <div class="lgcab-contact__text"><markdown [data]="contact.postAddress.content"></markdown></div>
-    </div>
-  </a>
-  <div class="lgcab-contact__item">
-    <div class="lgcab-contact__icon"><mat-icon>work</mat-icon></div>
-    <div class="lgcab-contact__content">
-      <h3 class="lgcab-contact__header">ORGANISATIONSNUMMER</h3>
-      <div class="lgcab-conact__text">{{ contact.organizationNo }}</div>
+@if (contact) {
+  <div class="lgcab-contact">
+    <a class="lgcab-contact__item" [href]="'tel:' + contact.phoneNo">
+      <div class="lgcab-contact__icon"><mat-icon>phone</mat-icon></div>
+      <div class="lgcab-contact__content">
+        <h3 class="lgcab-contact__header">TELEFON</h3>
+        <p class="lgcab-contact__text">{{ contact.phoneNo }}</p>
+      </div>
+    </a>
+    <a class="lgcab-contact__item" [href]="'mailto:' + contact.email">
+      <div class="lgcab-contact__icon"><mat-icon>alternate_email</mat-icon></div>
+      <div class="lgcab-contact__content">
+        <h3 class="lgcab-contact__header">E-POST</h3>
+        <p class="lgcab-contact__text">{{ contact.email }}</p>
+      </div>
+    </a>
+    @if (contact.invoiceEmail) {
+      <a class="lgcab-contact__item" [href]="contact.invoiceEmail">
+        <div class="lgcab-contact__icon"><mat-icon>receipt_long</mat-icon></div>
+        <div class="lgcab-contact__content">
+          <h3 class="lgcab-contact__header">FAKTUROR</h3>
+          <p class="lgcab-contact__text">{{ contact.invoiceEmail.replace('mailto:', '') }}</p>
+        </div>
+      </a>
+    }
+    <a class="lgcab-contact__item" target="_blank" rel="noreferrer" [href]="contact.visitingAddress.mapUrl">
+      <div class="lgcab-contact__icon"><mat-icon>pin_drop</mat-icon></div>
+      <div class="lgcab-contact__content">
+        <h3 class="lgcab-contact__header">BESÖKSADRESS</h3>
+        <div class="lgcab-contact__text"><markdown [data]="contact.visitingAddress.content"></markdown></div>
+      </div>
+    </a>
+    <a class="lgcab-contact__item" target="_blank" rel="noreferrer" [href]="contact.postAddress.mapUrl">
+      <div class="lgcab-contact__icon"><mat-icon>mail_outline</mat-icon></div>
+      <div class="lgcab-contact__content">
+        <h3 class="lgcab-contact__header">POSTADRESS</h3>
+        <div class="lgcab-contact__text"><markdown [data]="contact.postAddress.content"></markdown></div>
+      </div>
+    </a>
+    <div class="lgcab-contact__item">
+      <div class="lgcab-contact__icon"><mat-icon>work</mat-icon></div>
+      <div class="lgcab-contact__content">
+        <h3 class="lgcab-contact__header">ORGANISATIONSNUMMER</h3>
+        <div class="lgcab-conact__text">{{ contact.organizationNo }}</div>
+      </div>
     </div>
   </div>
-</div>
+}
