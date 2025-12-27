@@ -9,9 +9,10 @@ import { Splash } from '../../model/splash.model';
 import { Contact } from '../../model/contact.model';
 
 @Component({
-  selector: 'lgcab-start',
-  templateUrl: './start.component.html',
-  styleUrls: ['./start.component.scss']
+    selector: 'lgcab-start',
+    templateUrl: './start.component.html',
+    styleUrls: ['./start.component.scss'],
+    standalone: false
 })
 export class StartComponent implements OnInit {
   public innerHeight = 0;

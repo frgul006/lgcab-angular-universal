@@ -7,9 +7,10 @@ import { SeoService } from '../../seo.service';
 import { ProjectsDialogComponent } from './projects.dialog.component';
 
 @Component({
-  selector: 'lgcab-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+    selector: 'lgcab-projects',
+    templateUrl: './projects.component.html',
+    styleUrls: ['./projects.component.scss'],
+    standalone: false
 })
 export class ProjectsComponent implements OnInit {
   projects!: Observable<Project[]>;

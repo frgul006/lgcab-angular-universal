@@ -14,10 +14,11 @@ import { Subject, fromEvent } from 'rxjs';
 import { distinctUntilChanged, map, takeUntil, throttleTime } from 'rxjs/operators';
 
 @Component({
-  selector: 'lgcab-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'lgcab-nav',
+    templateUrl: './nav.component.html',
+    styleUrls: ['./nav.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class NavComponent implements AfterViewInit, OnDestroy, OnInit {
   @HostBinding('class.lgcab-nav--past-splash') isPastSplash = false;
