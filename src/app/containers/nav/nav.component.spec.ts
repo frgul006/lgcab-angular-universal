@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { MatMenuModule } from '@angular/material/menu';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { NavComponent } from './nav.component';
 
@@ -8,7 +11,9 @@ describe('NavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavComponent ]
+      declarations: [ NavComponent ],
+      imports: [MatMenuModule, RouterTestingModule],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

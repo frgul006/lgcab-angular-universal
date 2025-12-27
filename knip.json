@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/webpro/knip/main/knip.schema.json",
-  "entry": ["src/main.ts", "src/main.server.ts", "server.ts", "prerender.ts"],
-  "project": ["tsconfig.json", "src/tsconfig.app.json", "src/tsconfig.server.json"],
-  "ignore": ["dist/**", "node_modules/**"]
+  "entry": ["angular.json", "src/**/*.ts"],
+  "project": ["tsconfig.json", "tsconfig.app.json", "tsconfig.spec.json"],
+  "ignore": ["dist/**", "node_modules/**"],
+  "ignoreDependencies": ["bootstrap"]
 }

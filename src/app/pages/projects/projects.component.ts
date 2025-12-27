@@ -12,7 +12,7 @@ import { ProjectsDialogComponent } from './projects.dialog.component';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  projects: Observable<Project[]>;
+  projects!: Observable<Project[]>;
 
   constructor(private seo: SeoService, private readonly queryService: QueryService, public dialog: MatDialog) {}
 
@@ -27,7 +27,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   openDialog(project: Project): void {
-    const dialogRef = this.dialog.open(ProjectsDialogComponent, {
+    this.dialog.open(ProjectsDialogComponent, {
       width: '378px',
       data: project
     });

@@ -1,18 +1,18 @@
-[
+import { Project } from '../model/project.model';
+import { ProjectStatus } from '../model/project-status.model';
+
+const PROJECT_STATUS_MAP = {
+  Done: ProjectStatus.DONE,
+  Doing: ProjectStatus.DOING
+} as const;
+
+const RAW_PROJECTS = [
   {
     "id": "cjpa3trbwggt509458o0ff2ly",
     "title": "Arbetarebostadsfonden",
     "description": "Bygg- och projektledning i samverkan. Förnyelse av kv. Drakdödaren 1 & 3\n",
     "role": "Fastighetsägarombud vid ombyggnad",
     "createdAt": "2018-12-04T18:56:05.28+00:00",
-    "currentStatus": "Done"
-  },
-  {
-    "id": "cjpa3oeungfi409455dm35vex",
-    "title": "Axxonen Properties AB",
-    "description": null,
-    "role": "Produktionschef nyproduktion",
-    "createdAt": "2018-12-04T18:51:55.827+00:00",
     "currentStatus": "Done"
   },
   {
@@ -175,4 +175,9 @@
     "createdAt": "2018-12-04T18:52:23.548+00:00",
     "currentStatus": "Done"
   }
-]
+] as const;
+
+export const PROJECTS: Project[] = RAW_PROJECTS.map(project => ({
+  ...project,
+  currentStatus: PROJECT_STATUS_MAP[project.currentStatus]
+}));

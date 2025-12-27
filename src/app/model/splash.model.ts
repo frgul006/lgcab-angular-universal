@@ -1,4 +1,4 @@
-export class Splash {
+export interface Splash {
   title: string;
   subtitle: string;
   callToAction: string;

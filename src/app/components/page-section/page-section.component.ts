@@ -7,7 +7,7 @@ import { PageComponent } from '../../model/page-component.model';
   styleUrls: ['./page-section.component.scss']
 })
 export class PageSectionComponent {
-  @Input() pageComponent: PageComponent;
-  @Input() imgUrl: string;
-  @Input() imgAlt: string;
+  @Input() pageComponent: PageComponent | null = null;
+  @Input() imgUrl = '';
+  @Input() imgAlt = '';
 }

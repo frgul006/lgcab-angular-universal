@@ -1,6 +1,6 @@
-export class PageComponent {
+export interface PageComponent {
   slug?: string;
   title: string;
-  preamble: string;
+  preamble: string | null;
   content: string; // markdown
 }

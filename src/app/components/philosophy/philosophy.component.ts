@@ -8,5 +8,5 @@ import { Philosophy } from '../../model/philosophy.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PhilosophyComponent {
-  @Input() philosophies: Philosophy[];
+  @Input() philosophies: Philosophy[] | null = null;
 }

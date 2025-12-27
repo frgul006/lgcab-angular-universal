@@ -1,6 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'bootstrap-custom';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 @import 'material.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5rem 0;
+}
+
 
 html,
 body {
@@ -13,7 +31,31 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-markdown a[target=_blank]:after {
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: #0056b3;
+    text-decoration: none;
+  }
+}
+
+markdown a[target=_blank]:after,
+.lgcab-page-section a[target="_blank"]::after {
   content: "open_in_new";
   font-family: 'Material Icons';
   margin-left: .125rem;

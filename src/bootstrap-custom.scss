@@ -1,0 +1,56 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+
+$spacers: (
+  0: 0,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem
+);
+
+$utilities: (
+  "display": (
+    property: display,
+    class: d,
+    responsive: true,
+    values: (
+      none: none,
+      block: block
+    )
+  ),
+  "margin-top": (
+    property: margin-top,
+    class: mt,
+    responsive: true,
+    values: $spacers
+  ),
+  "margin-bottom": (
+    property: margin-bottom,
+    class: mb,
+    responsive: true,
+    values: $spacers
+  ),
+  "padding-top": (
+    property: padding-top,
+    class: pt,
+    values: $spacers
+  ),
+  "padding-bottom": (
+    property: padding-bottom,
+    class: pb,
+    values: $spacers
+  ),
+  "padding": (
+    property: padding,
+    class: p,
+    values: (
+      0: 0
+    )
+  )
+);
+
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/utilities/api";

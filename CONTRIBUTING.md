@@ -1,11 +1,11 @@
 # Contributing Guide
 
-Thanks for contributing! This repo is an Angular Universal application with SSR and prerendering. Please follow the steps below to keep changes consistent and easy to review.
+Thanks for contributing! This repo is an Angular 17 SSR application with prerendering enabled. Please follow the steps below to keep changes consistent and easy to review.
 
 ## Getting Started
-- Install dependencies: `npm install` or `yarn`.
+- Install dependencies: `npm install`.
 - Start the dev server: `npm run start`.
-- Build SSR locally: `npm run build:ssr && npm run serve:ssr`.
+- Build SSR locally: `npm run build && npm run serve:ssr`.
 
 ## Branching & Workflow
 - Create a feature branch from `main` or the default branch.

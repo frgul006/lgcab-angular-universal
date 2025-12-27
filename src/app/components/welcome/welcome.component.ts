@@ -8,5 +8,5 @@ import { PageComponent } from '../../model/page-component.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WelcomeComponent {
-  @Input() pageComponent: PageComponent;
+  @Input() pageComponent: PageComponent | null = null;
 }

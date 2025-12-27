@@ -1,3 +1,2 @@
 [build.environment]
-  NODE_VERSION = "18"
-  NODE_OPTIONS = "--openssl-legacy-provider"
+  NODE_VERSION = "20"
